@@ -49,7 +49,7 @@ data<-data[order(data$GRID_ID),]
 data<-as.data.frame(data)
 
 #drop unwanted levels
-drops<-c("ï..FID","FID_1","Avg_Field1","SD_Field1","SD_DIVEYEA*","Shape","FID_inters","Id","BUFF_DIST","ORIG_FID","FID_simpli","FID_p2pl_p","Id_1","FID_p2pl_1","Id_12","F_AREA")
+drops<-c("Ã¯..FID","FID_1","Avg_Field1","SD_Field1","SD_DIVEYEA*","Shape","FID_inters","Id","BUFF_DIST","ORIG_FID","FID_simpli","FID_p2pl_p","Id_1","FID_p2pl_1","Id_12","F_AREA")
 data<-data[ , !(names(data) %in% drops)]
 
 #rename levels in variable by getting rid of avg bit
@@ -80,25 +80,5 @@ str(gridcoverlabel)
 
 write.csv(gridcoverlabel,"C:\\Users\\Helen\\Documents\\PHD\\Data_Analysis\\Kingman 08\\Final_dataframes\\longKIN08.csv")
 
-#############################################################################################
-#split character string by _ and obtain a list 
-#nameret<-lapply(strsplit(as.character(df$Name), "_"), "[", 1:2)
-#str(nameret)
-
-#store this list as two columns in the dataframe
-#df$transect2<-do.call(rbind, as.vector(nameret))
-
-#df$transect<-paste(df$transect2[,1], df$transect2[,2],sep="_")
-
-#df$transect<-as.factor(df$transect)
-
-#create a dataframe of averages by transect
-#df_av<-aggregate(df, by=list(df$transect),FUN=mean,na.rm=T)
-
-#create standard error functin
-#SE=function(X){sd(X)/sqrt(length(X))}
-
-#create another for standard error
-#df_SE<-aggregate(df, by=list(df$transect),FUN=SE)
 
 
